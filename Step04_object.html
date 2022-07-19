@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_object.html</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="문자열 입력...">
+    <script>
+        let mem={num:1, name:"kim", addr:"seoul"};
+        /*
+        let num=mem.num;
+        let name= mem.name;
+        */
+        let {num, name}=mem;
+
+        let useMem=function({num, name}){
+            console.log(num+" | "+name)
+        };
+
+        useMem({num:2, name:"lee"});
+        useMem(mem);
+
+        document.querySelector("#inputMsg").addEventListener("keydown", function(e){
+            console.log(e.keyCode);
+        });
+
+        document.querySelector("#inputMsg").addEventListener("keydown", function(e){
+            console.log(e);
+        });
+
+        document.querySelector("#inputMsg").addEventListener("keydown", function({keyCode}){
+            console.log(keyCode);
+        });
+    </script>
+</body>
+</html>
